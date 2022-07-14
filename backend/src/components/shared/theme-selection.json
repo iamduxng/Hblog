@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_theme_selection",
+  "info": {
+    "displayName": "Theme selection",
+    "icon": "border-all",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Themes": {
+      "type": "enumeration",
+      "enum": [
+        "Layout A",
+        "Layout B",
+        "Layout C"
+      ],
+      "default": "Layout A",
+      "required": true
+    }
+  }
+}
