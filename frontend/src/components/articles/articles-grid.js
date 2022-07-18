@@ -1,5 +1,5 @@
 import React from 'react'
-import ArticleCard from './article-card'
+import ArticleCard from 'components/article/article-card'
 
 // TODO get selected template & render correct UI
 
@@ -10,12 +10,7 @@ const styles = {
 }
 
 const ArticlesGrid = ({ articles }) => {
-  const fakeArticles = [
-    ...articles,
-    ...articles,
-    ...articles,
-    ...articles
-  ]
+  const fakeArticles = [...articles, ...articles, ...articles, ...articles]
 
   const getBlockClasses = (idx) => {
     if (idx === 0 || idx === 11) {

@@ -2,6 +2,8 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+const path = require('path')
+
 module.exports = {
   plugins: [
     'gatsby-plugin-gatsby-cloud',
@@ -61,5 +63,26 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        root: path.join(__dirname, 'src'),
+      },
+    },
+    {
+      resolve: `gatsby-plugin-breadcrumb`,
+      options: {
+        defaultCrumb: {
+          // location: required and must include the pathname property
+          location: {
+            pathname: '/',
+          },
+          // crumbLabel: required label for the default crumb
+          crumbLabel: 'Home',
+          // all other properties optional
+          crumbSeparator: ' / ',
+        },
+      },
+    },
   ],
 }

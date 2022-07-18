@@ -1,32 +1,23 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Layout from '../../components/layout'
-import ArticlesGrid from '../../components/articles-grid'
-import Seo from '../../components/seo'
-import Headings from '../../components/headings'
+import Layout from 'components/layout'
+import Seo from 'components/seo'
+import ArticlesGrid from 'components/articles/articles-grid'
 
-const ArticlesPage = () => {
-  const { allStrapiArticle, strapiGlobal } = useStaticQuery(graphql`
+const ArticlesPage = ({ location }) => {
+  const { allStrapiArticle } = useStaticQuery(graphql`
     query {
       allStrapiArticle {
         nodes {
           ...ArticleCard
         }
       }
-      strapiGlobal {
-        siteName
-        siteDescription
-      }
     }
   `)
 
   return (
-    <Layout>
+    <Layout location={location} crumbLabel="Posts">
       <Seo seo={{ metaTitle: 'Home' }} />
-      <Headings
-        title={strapiGlobal.siteName}
-        description={strapiGlobal.siteDescription}
-      />
       <main>
         <ArticlesGrid articles={allStrapiArticle.nodes} />
       </main>
