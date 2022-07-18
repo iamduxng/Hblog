@@ -1,9 +1,9 @@
-import React from "react"
-import { graphql } from "gatsby"
-import BlockRichText from "./block-rich-text"
-import BlockMedia from "./block-media"
-import BlockQuote from "./block-quote"
-import BlockSlider from "./block-slider"
+import React from 'react'
+import { graphql } from 'gatsby'
+import BlockRichText from './block-rich-text'
+import BlockMedia from './block-media'
+import BlockQuote from './block-quote'
+import BlockSlider from './block-slider'
 
 const componentsMap = {
   STRAPI__COMPONENT_SHARED_RICH_TEXT: BlockRichText,

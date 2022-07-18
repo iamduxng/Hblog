@@ -1,13 +1,13 @@
-import React from "react"
-import Footer from "./footer"
-import Navbar from "./navbar"
+import React from 'react'
+import Footer from './footer'
+import Navbar from './navbar'
 
 const Layout = ({ children }) => {
   return (
     <div class="flex min-h-screen flex-col justify-between bg-neutral-50 text-neutral-900">
       <div>
         <Navbar />
-        {children}
+        <main class="container mt-12">{children}</main>
       </div>
       <Footer />
     </div>

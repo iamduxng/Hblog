@@ -1,20 +1,22 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import React from 'react'
+import { Link, graphql } from 'gatsby'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+
+const styles = {
+  wrapper: 'flex flex-col h-full overflow-hidden rounded-lg bg-white shadow',
+  shortContent: 'p-4 flex-1',
+}
 
 const ArticleCard = ({ article }) => {
   return (
-    <Link
-      to={`/article/${article.slug}`}
-      className="overflow-hidden rounded-lg bg-white shadow-sm transition-shadow hover:shadow-md"
-    >
+    <Link to={`/article/${article.slug}`} className={styles.wrapper}>
       <GatsbyImage
         image={getImage(article.cover?.localFile)}
         alt={article.cover?.alternativeText}
       />
-      <div className="px-4 py-4">
+      <div className={styles.shortContent}>
         <h3 className="font-bold text-neutral-700">{article.title}</h3>
-        <p className="line-clamp-2 mt-2 text-neutral-500">
+        <p className="mt-2 text-neutral-500 line-clamp-2">
           {article.description}
         </p>
       </div>

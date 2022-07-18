@@ -1,10 +1,11 @@
-const path = require("path")
+const path = require('path')
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
   // Define a template for blog post
-  const articlePost = path.resolve("./src/templates/article-post.js")
+  // TODO: Get post template by choice
+  const articlePost = path.resolve('./src/templates/article-post.js')
 
   const result = await graphql(
     `

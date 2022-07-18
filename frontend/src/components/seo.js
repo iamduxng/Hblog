@@ -1,6 +1,6 @@
-import React from "react"
-import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react'
+import { Helmet } from 'react-helmet'
+import { useStaticQuery, graphql } from 'gatsby'
 
 const Seo = ({ seo = {} }) => {
   const { strapiGlobal } = useStaticQuery(graphql`
@@ -39,11 +39,11 @@ const Seo = ({ seo = {} }) => {
     if (fullSeo.metaTitle) {
       tags.push(
         {
-          property: "og:title",
+          property: 'og:title',
           content: fullSeo.metaTitle,
         },
         {
-          name: "twitter:title",
+          name: 'twitter:title',
           content: fullSeo.metaTitle,
         }
       )
@@ -51,15 +51,15 @@ const Seo = ({ seo = {} }) => {
     if (fullSeo.metaDescription) {
       tags.push(
         {
-          name: "description",
+          name: 'description',
           content: fullSeo.metaDescription,
         },
         {
-          property: "og:description",
+          property: 'og:description',
           content: fullSeo.metaDescription,
         },
         {
-          name: "twitter:description",
+          name: 'twitter:description',
           content: fullSeo.metaDescription,
         }
       )
@@ -68,26 +68,26 @@ const Seo = ({ seo = {} }) => {
       const imageUrl = fullSeo.shareImage.localFile.url
       tags.push(
         {
-          name: "image",
+          name: 'image',
           content: imageUrl,
         },
         {
-          property: "og:image",
+          property: 'og:image',
           content: imageUrl,
         },
         {
-          name: "twitter:image",
+          name: 'twitter:image',
           content: imageUrl,
         }
       )
     }
     if (fullSeo.article) {
       tags.push({
-        property: "og:type",
-        content: "article",
+        property: 'og:type',
+        content: 'article',
       })
     }
-    tags.push({ name: "twitter:card", content: "summary_large_image" })
+    tags.push({ name: 'twitter:card', content: 'summary_large_image' })
 
     return tags
   }
@@ -99,7 +99,7 @@ const Seo = ({ seo = {} }) => {
       title={fullSeo.metaTitle}
       link={[
         {
-          rel: "icon",
+          rel: 'icon',
           href: favicon.localFile.url,
         },
       ]}

@@ -1,9 +1,9 @@
-import React from "react"
-import { graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import Layout from "../components/layout"
-import BlocksRenderer from "../components/blocks-renderer"
-import Seo from "../components/seo"
+import React from 'react'
+import { graphql } from 'gatsby'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import Layout from '../components/layout'
+import BlocksRenderer from '../components/blocks-renderer'
+import Seo from '../components/seo'
 
 const ArticlePage = ({ data }) => {
   const article = data.strapiArticle
