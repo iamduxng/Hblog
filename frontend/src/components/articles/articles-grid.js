@@ -10,7 +10,12 @@ const styles = {
 }
 
 const ArticlesGrid = ({ articles }) => {
-  const fakeArticles = [...articles, ...articles, ...articles, ...articles]
+  const fakeArticles = [
+    ...articles,
+    ...articles,
+    ...articles,
+    ...articles
+  ]
 
   const getBlockClasses = (idx) => {
     if (idx === 0 || idx === 11) {
@@ -25,7 +30,7 @@ const ArticlesGrid = ({ articles }) => {
   return (
     <div className={styles.listWrapper}>
       {fakeArticles.map((article, idx) => (
-        <div className={getBlockClasses(idx)}>
+        <div key={`articleCard_${idx}`} className={getBlockClasses(idx)}>
           <ArticleCard article={article} />
         </div>
       ))}

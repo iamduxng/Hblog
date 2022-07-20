@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import { useBreadcrumb } from 'gatsby-plugin-breadcrumb'
 
 const styles = {
-  breadcrumb: 'flex text-lg font-semibold',
+  breadcrumb: 'flex text-lg font-medium',
   crumbItem: 'hover:underline',
   crumbSeparator: 'mx-2',
 }
@@ -17,7 +17,7 @@ const CustomBreadcrumb = ({ location, crumbLabel }) => {
   return (
     <div className={styles.breadcrumb}>
       {crumbs.map((crumb) => (
-        <>
+        <div key={crumb.crumbLabel}>
           <Link to={crumb.pathname} className={styles.crumbItem}>
             {crumb.crumbLabel}
           </Link>
@@ -26,7 +26,7 @@ const CustomBreadcrumb = ({ location, crumbLabel }) => {
               {crumb.crumbSeparator}
             </span>
           )}
-        </>
+        </div>
       ))}
     </div>
   )
