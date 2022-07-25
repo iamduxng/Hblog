@@ -17,7 +17,7 @@ const ArticlesPage = ({ location }) => {
 
   return (
     <Layout location={location} crumbLabel="Posts">
-      <Seo seo={{ metaTitle: 'Home' }} />
+      <Seo seo={{ metaTitle: 'Articles' }} />
       <main>
         <ArticlesGrid articles={allStrapiArticle.nodes} />
       </main>
