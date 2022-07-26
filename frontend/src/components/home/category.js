@@ -1,20 +1,27 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import H2 from 'components/common/h2'
 import ArticleCard from 'components/article/article-card'
 
 const styles = {
   section: 'flex flex-col',
-  title: 'mb-4',
+  head: 'flex justify-between items-center',
+  title: 'mb-4 mr-4 capitalize',
+  seeMoreLink: 'font-medium underline text-sky-400',
   articlesWrapper: 'grid grid-cols-1 md:grid-cols-3 gap-4',
 }
 
 const HomeCategory = ({ location, category }) => {
-  const { articles, name, strapi_id } = category
+  const { articles, name, strapi_id, slug } = category
 
   return (
     <div className={styles.wrapper}>
-      <H2 className={styles.title}>{ name }</H2>
+      <div className={styles.head}>
+        <H2 className={styles.title}>{ name }</H2>
+        <Link to={`/${slug}`} className={styles.seeMoreLink}>
+          See more
+        </Link>
+      </div>
       <div className={styles.articlesWrapper}>
         {articles.map((article, idx) => (
           <div key={`articleCard_${strapi_id}_${idx}`}>
