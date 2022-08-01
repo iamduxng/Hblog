@@ -1,35 +1,32 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
 import Layout from 'components/layout'
 import Seo from 'components/seo'
-import HomeCategories from 'components/home/categories'
+import CategoryLatest from 'components/home/category-latest'
+import HomeCategory1stPriority from 'components/home/category-p1'
+import HomeCategory2ndPriority from 'components/home/category-p2'
+import HomeCategory3rdPriority from 'components/home/category-p3'
+
+const styles = {
+  category: 'mb-28'
+}
 
 const HomePage = ({ location }) => {
-  const { allStrapiCategory } = useStaticQuery(graphql`
-    query {
-      allStrapiCategory(
-        limit: 5,
-        sort: { fields: updatedAt },
-        filter: {
-          articles: {
-            elemMatch: {
-              id: {ne: "null"}
-            }
-          }
-        },
-      ) {
-        nodes {
-          ...HomeCategory,
-        }
-      }
-    }
-  `)
-
   return (
     <Layout location={location} crumbLabel="Home">
       <Seo seo={{ metaTitle: 'Home' }} />
 
-      <HomeCategories categories={allStrapiCategory.nodes} />
+      <div className={styles.category}>
+        <CategoryLatest />
+      </div>
+      <div className={styles.category}>
+        <HomeCategory1stPriority />
+      </div>
+      <div className={styles.category}>
+        <HomeCategory2ndPriority />
+      </div>
+      <div className={styles.category}>
+        <HomeCategory3rdPriority />
+      </div>
     </Layout>
   )
 }

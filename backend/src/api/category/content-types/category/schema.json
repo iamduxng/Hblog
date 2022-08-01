@@ -26,6 +26,21 @@
     },
     "description": {
       "type": "text"
+    },
+    "priority": {
+      "type": "enumeration",
+      "enum": [
+        "p1",
+        "p2",
+        "p3"
+      ],
+      "required": false,
+      "enumName": "category_priority"
+    },
+    "isShownOnHome": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }
