@@ -28,7 +28,7 @@ const HomeCategory2ndPriority = () => {
   return (
     <>
       { allStrapiCategory.nodes.map((category, idx) => (
-        <div key={`category_p1_${idx}`}>
+        <div key={`category_p2_${idx}`}>
           <HomeCategory name={category.name} slug={category.slug}>
             <ArticlesGrid articles={category.articles} />
           </HomeCategory>
