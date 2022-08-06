@@ -4,7 +4,7 @@ import { graphql, Link, useStaticQuery } from 'gatsby'
 import { useBreakpoint } from 'gatsby-plugin-breakpoints'
 import H1 from 'components/common/H1'
 import HeaderDesktop from 'components/header/desktop'
-import { GiHamburgerMenu } from 'components/icons'
+import HeaderMobile from 'components/header/mobile'
 
 const styles = {
   wrapper: 'bg-black text-white',
@@ -38,7 +38,7 @@ const Header = () => {
         {breakpoints.md ? (
           <HeaderDesktop categories={allStrapiCategory.nodes} />
         ) : (
-          <GiHamburgerMenu size='1.5rem' />
+          <HeaderMobile categories={allStrapiCategory.nodes} />
         )}
       </div>
     </div>
