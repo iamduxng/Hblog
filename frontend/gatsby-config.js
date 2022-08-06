@@ -84,5 +84,15 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: 'gatsby-plugin-breakpoints',
+      options: {
+        queries: {
+          sm: '(min-width: 640px)',
+          md: '(min-width: 768px)',
+          l: '(min-width: 1024px)',
+        }
+      }
+    }
   ],
 }

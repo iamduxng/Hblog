@@ -1,6 +1,6 @@
 import React from 'react'
 import Footer from 'components/core/footer'
-import Navbar from 'components/core/navbar'
+import Header from 'components/core/header'
 import CustomBreadcrumb from 'components/core/breadcrumb'
 import InputSearch from 'components/common/input-search'
 
@@ -15,7 +15,7 @@ const Layout = ({ children, location, crumbLabel, searchFunc }) => {
   return (
     <div className={styles.wrapper}>
       <div>
-        <Navbar />
+        <Header />
         <main className="container mt-12">
           <div className={styles.mainHeading}>
             <div className={styles.breadcrumb}>
