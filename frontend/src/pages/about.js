@@ -1,9 +1,9 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import BlocksRenderer from "../components/blocks-renderer"
-import Headings from "../components/headings"
+import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import LayoutPost from 'components/layout/post'
+import Seo from 'components/seo'
+import BlocksRenderer from 'components/blocks-renderer'
+import Headings from 'components/core/headings'
 
 const AboutPage = () => {
   const { strapiAbout } = useStaticQuery(graphql`
@@ -24,11 +24,11 @@ const AboutPage = () => {
   }
 
   return (
-    <Layout>
+    <LayoutPost>
       <Seo seo={seo} />
       <Headings title={strapiAbout.title} />
       <BlocksRenderer blocks={blocks} />
-    </Layout>
+    </LayoutPost>
   )
 }
 

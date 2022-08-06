@@ -1,55 +1,57 @@
-require("dotenv").config({
+require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+const path = require('path')
+
 module.exports = {
   plugins: [
-    "gatsby-plugin-gatsby-cloud",
-    "gatsby-plugin-postcss",
+    'gatsby-plugin-gatsby-cloud',
+    'gatsby-plugin-postcss',
     {
-      resolve: "gatsby-source-strapi",
+      resolve: 'gatsby-source-strapi',
       options: {
-        apiURL: process.env.STRAPI_API_URL || "http://localhost:1337",
+        apiURL: process.env.STRAPI_API_URL || 'http://localhost:1337',
         accessToken: process.env.STRAPI_TOKEN,
         collectionTypes: [
           {
-            singularName: "article",
+            singularName: 'article',
             queryParams: {
               publicationState:
-                process.env.GATSBY_IS_PREVIEW === "true" ? "preview" : "live",
+                process.env.GATSBY_IS_PREVIEW === 'true' ? 'preview' : 'live',
               populate: {
-                cover: "*",
+                cover: '*',
                 blocks: {
-                  populate: "*",
+                  populate: '*',
                 },
               },
             },
           },
           {
-            singularName: "author",
+            singularName: 'author',
           },
           {
-            singularName: "category",
+            singularName: 'category',
           },
         ],
         singleTypes: [
           {
-            singularName: "about",
+            singularName: 'about',
             queryParams: {
               populate: {
                 blocks: {
-                  populate: "*",
+                  populate: '*',
                 },
               },
             },
           },
           {
-            singularName: "global",
+            singularName: 'global',
             queryParams: {
               populate: {
-                favicon: "*",
+                favicon: '*',
                 defaultSeo: {
-                  populate: "*",
+                  populate: '*',
                 },
               },
             },
@@ -57,9 +59,30 @@ module.exports = {
         ],
       },
     },
-    "gatsby-plugin-image",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
-    "gatsby-transformer-remark",
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        root: path.join(__dirname, 'src'),
+      },
+    },
+    {
+      resolve: `gatsby-plugin-breadcrumb`,
+      options: {
+        defaultCrumb: {
+          // location: required and must include the pathname property
+          location: {
+            pathname: '/',
+          },
+          // crumbLabel: required label for the default crumb
+          crumbLabel: 'Home',
+          // all other properties optional
+          crumbSeparator: ' / ',
+        },
+      },
+    },
   ],
 }

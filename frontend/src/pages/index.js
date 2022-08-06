@@ -1,37 +1,34 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Layout from "../components/layout"
-import ArticlesGrid from "../components/articles-grid"
-import Seo from "../components/seo"
-import Headings from "../components/headings"
+import React from 'react'
+import Layout from 'components/layout'
+import Seo from 'components/seo'
+import CategoryLatest from 'components/home/category-latest'
+import HomeCategory1stPriority from 'components/home/category-p1'
+import HomeCategory2ndPriority from 'components/home/category-p2'
+import HomeCategory3rdPriority from 'components/home/category-p3'
 
-const IndexPage = () => {
-  const { allStrapiArticle, strapiGlobal } = useStaticQuery(graphql`
-    query {
-      allStrapiArticle {
-        nodes {
-          ...ArticleCard
-        }
-      }
-      strapiGlobal {
-        siteName
-        siteDescription
-      }
-    }
-  `)
+const styles = {
+  category: 'mb-28'
+}
 
+const HomePage = ({ location }) => {
   return (
-    <Layout>
-      <Seo seo={{ metaTitle: "Home" }} />
-      <Headings
-        title={strapiGlobal.siteName}
-        description={strapiGlobal.siteDescription}
-      />
-      <main>
-        <ArticlesGrid articles={allStrapiArticle.nodes} />
-      </main>
+    <Layout location={location} crumbLabel="Home">
+      <Seo seo={{ metaTitle: 'Home' }} />
+
+      <div className={styles.category}>
+        <CategoryLatest />
+      </div>
+      <div className={styles.category}>
+        <HomeCategory1stPriority />
+      </div>
+      <div className={styles.category}>
+        <HomeCategory2ndPriority />
+      </div>
+      <div className={styles.category}>
+        <HomeCategory3rdPriority />
+      </div>
     </Layout>
   )
 }
 
-export default IndexPage
+export default HomePage
