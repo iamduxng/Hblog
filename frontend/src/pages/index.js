@@ -12,7 +12,7 @@ const styles = {
 
 const HomePage = ({ location }) => {
   return (
-    <Layout location={location} crumbLabel="Home">
+    <Layout location={location}>
       <Seo seo={{ metaTitle: 'Home' }} />
 
       <div className={styles.category}>

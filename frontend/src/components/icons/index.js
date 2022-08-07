@@ -1,5 +1,6 @@
 import { FaSearch } from 'react-icons/fa'
 import { GiHamburgerMenu } from 'react-icons/gi'
+import { GrClose } from 'react-icons/gr'
 
 export {
   // FA
@@ -7,4 +8,7 @@ export {
 
   // GI
   GiHamburgerMenu,
+
+  // GR
+  GrClose,
 }

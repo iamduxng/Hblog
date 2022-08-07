@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
+import HeaderItemList from 'components/header/items'
 
 const styles = {
   wrapper: 'flex items-center justify-end',
@@ -7,21 +8,30 @@ const styles = {
   itemBefore: 'hover:before:block before:hidden before:absolute before:bottom-0 before:left-0 before:w-full before:h-1.5 before:bg-amber-400'
 }
 
-const HeaderDesktop = ({ categories }) => {
+const HeaderDesktop = ({ currentCategory }) => {
+  const { allStrapiCategory } = useStaticQuery(graphql`
+    query {
+      allStrapiCategory (
+        limit: 3,
+        sort: {
+          fields: updatedAt
+        },
+      ) {
+        nodes {
+          name,
+          slug,
+        }
+      }
+    }
+  `)
+
   return (
     <div className={styles.wrapper}>
-      {categories.map((category, idx) => (
-        <Link
-          key={`category_p1_${idx}`}
-          to={`/${category.slug}`}
-          className={`${styles.item} ${styles.itemBefore}`}
-        >
-          {category.name}
-        </Link>
-      ))}
-      <Link to='/about' className={`${styles.item} ${styles.itemBefore}`}>
-        About
-      </Link>
+      <HeaderItemList
+        categories={allStrapiCategory.nodes}
+        itemClasses={`${styles.item} ${styles.itemBefore}`}
+        currentCategory={currentCategory}
+      />
     </div>
   )
 }

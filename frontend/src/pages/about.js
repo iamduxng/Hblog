@@ -3,7 +3,8 @@ import { useStaticQuery, graphql } from 'gatsby'
 import LayoutPost from 'components/layout/post'
 import Seo from 'components/seo'
 import BlocksRenderer from 'components/blocks-renderer'
-const AboutPage = () => {
+
+const AboutPage = ({ location }) => {
   const { strapiAbout } = useStaticQuery(graphql`
     query {
       strapiAbout {
@@ -22,7 +23,7 @@ const AboutPage = () => {
   }
 
   return (
-    <LayoutPost>
+    <LayoutPost location={location}>
       <Seo seo={seo} />
       <BlocksRenderer blocks={blocks} />
     </LayoutPost>

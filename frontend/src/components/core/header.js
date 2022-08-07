@@ -1,6 +1,6 @@
 
-import React from 'react'
-import { graphql, Link, useStaticQuery } from 'gatsby'
+import React, { useMemo } from 'react'
+import { Link } from 'gatsby'
 import { useBreakpoint } from 'gatsby-plugin-breakpoints'
 import H1 from 'components/common/H1'
 import HeaderDesktop from 'components/header/desktop'
@@ -11,23 +11,10 @@ const styles = {
   container: 'container flex items-center justify-between py-4 md:py-0',
 }
 
-const Header = () => {
+const Header = ({ location }) => {
   const breakpoints = useBreakpoint()
-  const { allStrapiCategory } = useStaticQuery(graphql`
-    query {
-      allStrapiCategory (
-        limit: 3,
-        sort: {
-          fields: updatedAt
-        },
-      ) {
-        nodes {
-          name,
-          slug,
-        }
-      }
-    }
-  `)
+  const { pathname } = location
+  const currentCategory = useMemo(() => pathname.split('/')[1], [pathname])
 
   return (
     <div className={styles.wrapper}>
@@ -36,9 +23,9 @@ const Header = () => {
           <H1>Hblog</H1>
         </Link>
         {breakpoints.md ? (
-          <HeaderDesktop categories={allStrapiCategory.nodes} />
+          <HeaderDesktop currentCategory={currentCategory} />
         ) : (
-          <HeaderMobile categories={allStrapiCategory.nodes} />
+          <HeaderMobile currentCategory={currentCategory} />
         )}
       </div>
     </div>
