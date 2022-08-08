@@ -5,9 +5,9 @@ import Seo from 'components/seo'
 import ArticlesGrid from 'components/articles/articles-grid'
 
 const CategoryPage = ({ location, data }) => {
-  const { strapiCategory, strapiCategory: { articles = null }} = data
+  const {strapiCategory: { articles = null }} = data
   return (
-    <Layout location={location} crumbLabel={strapiCategory.name}>
+    <Layout location={location}>
       <Seo seo={{ metaTitle: 'Articles' }} />
       {articles &&
         <ArticlesGrid articles={articles} />

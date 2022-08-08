@@ -14,7 +14,7 @@ const HomeCategory = ({ children, name, slug }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.head}>
-        <H1 className={styles.title}>{ name }</H1>
+        { name && <H1 className={styles.title}>{ name }</H1> }
         { slug && (
           <Link to={`/${slug}`} className={styles.seeMoreLink}>
             See more

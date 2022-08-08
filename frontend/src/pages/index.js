@@ -18,14 +18,17 @@ const HomePage = ({ location }) => {
       <div className={styles.category}>
         <CategoryLatest />
       </div>
-      <div className={styles.category}>
-        <HomeCategory1stPriority />
-      </div>
-      <div className={styles.category}>
-        <HomeCategory2ndPriority />
-      </div>
-      <div className={styles.category}>
-        <HomeCategory3rdPriority />
+
+      <div className="container">
+        <div className={styles.category}>
+          <HomeCategory1stPriority />
+        </div>
+        <div className={styles.category}>
+          <HomeCategory2ndPriority />
+        </div>
+        <div className={styles.category}>
+          <HomeCategory3rdPriority />
+        </div>
       </div>
     </Layout>
   )
