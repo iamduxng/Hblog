@@ -1,6 +1,6 @@
 import React from 'react'
 import Slider from 'react-slick'
-import ArticleSlide from 'components/article/article-slide'
+import ArticleCard from 'components/article/article-card'
 
 const styles = {
   slideItem: 'px-4',
@@ -51,7 +51,7 @@ const ArticleSlider = ({ articles }) => {
     <Slider {...carouselSettings}>
       {articles.map((article, idx) => (
         <div key={`articleSlide_${idx}`} className={styles.slideItem}>
-          <ArticleSlide article={article} />
+          <ArticleCard article={article} />
         </div>
       ))}
     </Slider>
