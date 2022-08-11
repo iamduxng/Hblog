@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import H1 from 'components/common/h1'
-import ArticleSlider from 'components/articles/articles-slider'
+import ArticleSliderMulti from 'components/articles/articles-slider-multi'
 import { FaChevronLeft, FaChevronRight } from 'components/icons'
 
 const styles = {
@@ -47,7 +47,7 @@ const HomeCategoryLatest = () => {
           onClick={slickNext}
         />
       </div>
-      <ArticleSlider ref={sliderRef} articles={allStrapiArticle.nodes} />
+      <ArticleSliderMulti ref={sliderRef} articles={allStrapiArticle.nodes} />
     </>
   )
 }

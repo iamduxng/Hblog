@@ -38,11 +38,11 @@ const carouselSettings = {
   ]
 }
 
-const ArticleSlider = forwardRef(({ articles }, ref) => {
+const ArticleSliderMulti = forwardRef(({ articles }, ref) => {
   return (
     <Slider ref={ref} {...carouselSettings}>
       {articles.map((article, idx) => (
-        <div key={`articleSlide_${idx}`} className={styles.slideItem}>
+        <div key={`articleSlideMulti_${idx}`} className={styles.slideItem}>
           <ArticleCard article={article} />
         </div>
       ))}
@@ -50,4 +50,4 @@ const ArticleSlider = forwardRef(({ articles }, ref) => {
   )
 })
 
-export default ArticleSlider
+export default ArticleSliderMulti
