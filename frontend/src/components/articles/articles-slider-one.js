@@ -11,7 +11,8 @@ const carouselSettings = {
   slidesToShow: 1,
   slidesToScroll: 1,
   initialSlide: 0,
-  swipeToSlide: true,
+  adaptiveHeight: true,
+  autoplay: true,
 }
 
 const ArticleSliderOne = forwardRef(({ articles }, ref) => {
