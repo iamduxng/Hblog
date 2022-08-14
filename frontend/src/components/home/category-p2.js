@@ -25,12 +25,20 @@ const HomeCategory2ndPriority = () => {
     }
   `)
 
+  const getItemClasses = (idx) => {
+    if (idx === 0) {
+      return 'md:row-span-2 md:col-span-2'
+    } else {
+      return ''
+    }
+  }
+
   return (
     <>
       { allStrapiCategory.nodes.map((category, idx) => (
         <div key={`category_p2_${idx}`}>
           <HomeCategory name={category.name} slug={category.slug}>
-            <ArticlesGrid articles={category.articles} />
+            <ArticlesGrid articles={category.articles} getItemClasses={getItemClasses}/>
           </HomeCategory>
         </div>
       )) }
