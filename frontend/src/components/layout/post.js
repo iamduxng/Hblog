@@ -4,7 +4,7 @@ import Header from 'components/core/header'
 
 const styles = {
   main: 'h-container',
-  wrapper: 'flex min-h-screen flex-col justify-between bg-neutral-50 text-neutral-900'
+  wrapper: 'flex min-h-screen flex-col justify-between text-neutral-900'
 }
 
 const LayoutPost = ({ children, location }) => {

@@ -7,6 +7,7 @@ module.exports = {
       colors: {
         neutral: colors.neutral,
         primary: colors.sky,
+        paper: '#f2ebd5',
       },
       backgroundImage: {
         'horizontal-black-gradient': `linear-gradient(

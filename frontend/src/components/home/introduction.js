@@ -13,7 +13,7 @@ const styles = {
   aboutButton: 'w-32 mt-4',
   aboutTransition: 'animate-[to-right_2s_ease-in-out]',
   avatar: 'absolute bottom-0 right-0 w-2/3 md:w-1/2',
-  avatarTransition: 'animate-[to-top_3s_ease-in-out]'
+  avatarTransition: 'animate-[to-top_2s_ease-in-out]'
 }
 
 const HomeIntroduction = () => {

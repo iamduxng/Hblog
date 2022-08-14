@@ -11,7 +11,10 @@ const styles = {
   title: 'font-bold text-lg',
   description: 'mt-2 text-gray-500 line-clamp-2',
   overlay: 'absolute w-full h-full bg-black opacity-0 transition-opacity duration-300',
-  hoveredOverlay: '!opacity-20',
+  hoveredOverlay: '!opacity-10',
+  imageWrapper: 'overflow-hidden',
+  image: 'transition-all duration-300',
+  hoveredImage: 'scale-110'
 }
 
 const ArticleCard = ({ article }) => {
@@ -24,10 +27,13 @@ const ArticleCard = ({ article }) => {
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
-      <GatsbyImage
-        image={getImage(article.cover?.localFile)}
-        alt={article.cover?.alternativeText}
-      />
+      <div className={styles.imageWrapper}>
+        <GatsbyImage
+          className={`${styles.image} ${isHover ? styles.hoveredImage : ''}`}
+          image={getImage(article.cover?.localFile)}
+          alt={article.cover?.alternativeText}
+        />
+      </div>
       <div className={styles.heading}>
         <div className={styles.time}>
           {article.createdAt}
