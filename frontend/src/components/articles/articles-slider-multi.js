@@ -16,7 +16,7 @@ const carouselSettings = {
   slidesToScroll: 3,
   initialSlide: 0,
   centerMode: true,
-  swipeToSlide: true,
+  draggable: false,
   centerPadding: "100px",
   responsive: [
     {
