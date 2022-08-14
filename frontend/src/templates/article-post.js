@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import LayoutPost from 'components/layout/post'
-import BlocksRenderer from 'components/blocks-renderer'
+import BlocksRenderer from 'components/core/blocks-renderer'
 import Seo from 'components/seo'
 
 const ArticlePage = ({ data, location }) => {

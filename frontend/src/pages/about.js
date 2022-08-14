@@ -2,7 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import LayoutPost from 'components/layout/post'
 import Seo from 'components/seo'
-import BlocksRenderer from 'components/blocks-renderer'
+import BlocksRenderer from 'components/core/blocks-renderer'
 
 const AboutPage = ({ location }) => {
   const { strapiAbout } = useStaticQuery(graphql`

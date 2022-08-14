@@ -27,6 +27,11 @@ module.exports = {
           hsla(0, 0%, 0%, 0.117) 94.1%,
           hsla(0, 0%, 0%, 0.054) 97.6%,
           hsla(0, 0%, 0%, 0) 100%
+        )`,
+        'eclipse-right-gradient': `radial-gradient(
+          ellipse 100% 100% at left center,
+          transparent 80%,
+          #000
         )`
       }
     },
