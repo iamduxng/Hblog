@@ -33,6 +33,16 @@ module.exports = {
           transparent 80%,
           #000
         )`
+      },
+      keyframes: {
+        'to-right': {
+          'from': { transform: 'translate(-100vw, 0)' },
+          'to': { transform: 'translate(0, 0)' }
+        },
+        'to-top': {
+          'from': { transform: 'translate(0, 100vh)' },
+          'to': { transform: 'translate(0, 0)' }
+        }
       }
     },
     container: {

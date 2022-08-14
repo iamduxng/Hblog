@@ -3,7 +3,7 @@ import Footer from 'components/core/footer'
 import Header from 'components/core/header'
 
 const styles = {
-  main: 'container mt-20 mb-40',
+  main: 'h-container',
   wrapper: 'flex min-h-screen flex-col justify-between bg-neutral-50 text-neutral-900'
 }
 

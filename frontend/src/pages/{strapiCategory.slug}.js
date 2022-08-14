@@ -9,9 +9,12 @@ const CategoryPage = ({ location, data }) => {
   return (
     <Layout location={location}>
       <Seo seo={{ metaTitle: 'Articles' }} />
-      {articles &&
-        <ArticlesGrid articles={articles} />
-      }
+
+      <div className="h-container">
+        {articles &&
+          <ArticlesGrid articles={articles} />
+        }
+      </div>
     </Layout>
   )
 }

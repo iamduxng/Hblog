@@ -25,7 +25,10 @@ const AboutPage = ({ location }) => {
   return (
     <LayoutPost location={location}>
       <Seo seo={seo} />
-      <BlocksRenderer blocks={blocks} />
+
+      <div class="h-container">
+        <BlocksRenderer blocks={blocks} />
+      </div>
     </LayoutPost>
   )
 }

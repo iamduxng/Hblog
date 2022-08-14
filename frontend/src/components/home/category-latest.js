@@ -6,7 +6,7 @@ import { FaChevronLeft, FaChevronRight } from 'components/icons'
 
 const styles = {
   head: 'container w-full flex items-center justify-center mb-8',
-  title: 'mx-8 capitalize',
+  title: 'mx-8 capitalize p-1 border-b-4 border-amber-400',
   navIcon: 'cursor-pointer hover:text-amber-400'
 }
 

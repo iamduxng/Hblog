@@ -6,12 +6,14 @@ import H2 from 'components/common/h2'
 import Button from 'components/common/button'
 
 const styles = {
-  wrapper: 'relative h-screen',
+  wrapper: 'relative h-screen overflow-hidden',
   overlay: 'flex items-start justify-center p-16 md:items-center md:justify-start',
   overlayBg: 'absolute top-0 right-0 bg-eclipse-right-gradient w-full h-full',
   about: 'z-10 flex flex-col p-8 max-w-screen-sm bg-black bg-opacity-20 rounded-2xl text-white',
   aboutButton: 'w-32 mt-4',
-  avatar: 'absolute bottom-0 right-0 w-1/2'
+  aboutTransition: 'animate-[to-right_2s_ease-in-out]',
+  avatar: 'absolute bottom-0 right-0 w-2/3 md:w-1/2',
+  avatarTransition: 'animate-[to-top_3s_ease-in-out]'
 }
 
 const HomeIntroduction = () => {
@@ -48,7 +50,7 @@ const HomeIntroduction = () => {
       fluid={strapiHome.background.localFile.childImageSharp.fluid}
     >
       <div className={`${styles.overlay} ${styles.overlayBg}`}>
-        <div className={styles.about}>
+        <div className={`${styles.about} ${styles.aboutTransition}`}>
           <H2>{strapiHome.about}</H2>
           <Link to='/about' className={styles.aboutButton}>
             <Button variant="primary">
@@ -56,7 +58,7 @@ const HomeIntroduction = () => {
             </Button>
           </Link>
         </div>
-        <div className={styles.avatar}>
+        <div className={`${styles.avatar} ${styles.avatarTransition}`}>
           <GatsbyImage
             image={getImage(strapiHome.avatar.localFile)}
             alt={strapiHome.avatar.alternativeText}

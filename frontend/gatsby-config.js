@@ -62,7 +62,15 @@ module.exports = {
     },
     'gatsby-plugin-image',
     'gatsby-background-image',
-    'gatsby-plugin-sharp',
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          placeholder: 'none',
+          backgroundColor: 'transparent',
+        }
+      }
+    },
     'gatsby-transformer-sharp',
     'gatsby-transformer-remark',
     {
