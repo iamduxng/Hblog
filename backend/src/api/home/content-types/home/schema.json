@@ -33,6 +33,12 @@
       "required": true,
       "unique": true,
       "maxLength": 200
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.social-media"
+      ]
     }
   }
 }

@@ -19,7 +19,7 @@ const Header = ({ location }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
-        <Link to='/' className={styles.logo}>
+        <Link to='/'>
           <H1>Hblog</H1>
         </Link>
         {breakpoints.md ? (

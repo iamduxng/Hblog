@@ -56,7 +56,19 @@ module.exports = {
               },
             },
           },
-          'home',
+          {
+            singularName: 'home',
+            queryParams: {
+              populate: {
+                about: '*',
+                avatar: '*',
+                background: '*',
+                blocks: {
+                  populate: '*'
+                }
+              }
+            }
+          }
         ],
       },
     },
