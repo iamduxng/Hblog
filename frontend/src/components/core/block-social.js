@@ -3,12 +3,11 @@ import { graphql } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 
 const styles = {
-  wrapper: 'block cursor-pointer w-20 h-20 overflow-hidden',
-  background: 'h-full w-full flex items-center justify-center',
-  logo: 'w-10 h-10 shadow-xl',
+  wrapper: 'block w-full h-full cursor-pointer overflow-hidden',
+  logo: 'w-10 h-10 hover:scale-125 mx-auto',
 }
 
-const BlockSocial = ({ data }) => {
+const BlockSocial = ({ data, bgClasses, logoClasses }) => {
   return (
     <a
       href={data.link}
@@ -18,12 +17,14 @@ const BlockSocial = ({ data }) => {
     >
       <BackgroundImage
         Tag="div"
-        className={styles.background}
+        className={bgClasses}
         fluid={data.background.localFile.childImageSharp.fluid}
       >
-        <div class={styles.logo}>
-          <img src={data.logo.localFile.url} alt={data.logo.alternativeText} />
-        </div>
+        <img
+          src={data.logo.localFile.url}
+          alt={data.logo.alternativeText}
+          className={`${styles.logo} ${logoClasses}`}
+        />
       </BackgroundImage>
     </a>
   )

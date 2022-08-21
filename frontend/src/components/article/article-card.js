@@ -18,7 +18,7 @@ const styles = {
 }
 
 const ArticleCard = ({ article }) => {
-  const [isHover, setIsHover] = useState(false);
+  const [isHover, setIsHover] = useState(false)
 
   return (
     <Link

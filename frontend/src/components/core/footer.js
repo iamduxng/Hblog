@@ -5,8 +5,9 @@ import BlockSocial from 'components/core/block-social'
 
 const styles = {
   wrapper: 'bg-black text-white',
-  container: 'container flex items-center justify-between py-8',
-  socialGroup: 'grid grid-cols-2 grid-rows-2 gap-1'
+  container: 'container flex items-center justify-between',
+  socialGroup: 'grid grid-cols-2 grid-rows-2 gap-1 -skew-x-12 mr-4 sm:mr-0',
+  socialBackground: 'w-20'
 }
 
 const Footer = () => {
@@ -30,8 +31,14 @@ const Footer = () => {
         </Link>
 
         <div className={styles.socialGroup}>
-          {blocks.map(block => (
-            <BlockSocial data={block} />
+          {blocks.map((block, idx) => (
+            <div key={`social-item-${idx}`} className={styles.socialBackground}>
+              <BlockSocial
+                data={block}
+                bgClasses={idx / 2 < 1 ? 'pt-8 pb-4' : 'pb-8 pt-4'}
+                logoClasses="skew-x-12"
+              />
+            </div>
           ))}
         </div>
       </div>
