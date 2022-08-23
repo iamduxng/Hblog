@@ -12,12 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Themes": {
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.theme-selection",
-      "required": true
-    },
     "title": {
       "type": "string"
     },
