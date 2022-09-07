@@ -65,7 +65,11 @@ module.exports = {
                 background: '*',
                 blocks: {
                   populate: '*'
-                }
+                },
+                travelBackground: '*',
+                travelHeadline: '*',
+                travelQuote: '*',
+                travelLink: '*',
               }
             }
           }
