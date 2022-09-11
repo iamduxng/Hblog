@@ -40,25 +40,12 @@
         "shared.social-media"
       ]
     },
-    "travelHeadline": {
-      "type": "string"
-    },
-    "travelQuote": {
-      "type": "text"
-    },
-    "travelBackground": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "travelLink": {
-      "type": "string"
+    "travelOverview": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.travel-overview"
+      ],
+      "required": false
     }
   }
 }

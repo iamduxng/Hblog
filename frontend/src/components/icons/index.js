@@ -5,6 +5,7 @@ import {
 } from 'react-icons/fa'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { GrClose } from 'react-icons/gr'
+import { ImLocation2 } from 'react-icons/im'
 
 export {
   // FA
@@ -17,4 +18,7 @@ export {
 
   // GR
   GrClose,
+
+  // IM
+  ImLocation2,
 }

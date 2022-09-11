@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_shared_travel_overviews",
+  "info": {
+    "displayName": "Travel Overview",
+    "icon": "plane-departure",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "countryName": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "countryMap": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "latitude": {
+      "type": "string",
+      "required": true
+    },
+    "longitude": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -26,6 +26,7 @@ const ArticleCard = ({ article }) => {
       className={styles.wrapper}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
+      onTouchStart={() => setIsHover(true)}
     >
       <div className={styles.imageWrapper}>
         <GatsbyImage

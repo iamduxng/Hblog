@@ -43,6 +43,14 @@ module.exports = {
         'to-top': {
           'from': { transform: 'translate(0, 100vh)' },
           'to': { transform: 'translate(0, 0)' }
+        },
+        'to-center-y': {
+          'from': { transform: 'translate(0, -100%)' },
+          'to': { transform: 'translate(0, 0)' },
+        },
+        'to-center-x': {
+          'from': { transform: 'translate(-100%, 0)' },
+          'to': { transform: 'translate(0, 0)' },
         }
       }
     },

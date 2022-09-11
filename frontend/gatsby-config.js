@@ -66,10 +66,9 @@ module.exports = {
                 blocks: {
                   populate: '*'
                 },
-                travelBackground: '*',
-                travelHeadline: '*',
-                travelQuote: '*',
-                travelLink: '*',
+                travelOverview: {
+                  populate: '*'
+                },
               }
             }
           }
