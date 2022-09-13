@@ -18,7 +18,7 @@ const BlockTravelOverview = ({ data, slug }) => {
   const [isHover, setIsHover] = useState(false)
 
   const { latitude, longitude } = data
-  const linkToTravel = `/${slug}?latitude=${latitude}&longitude=${longitude}`
+  const linkToTravel = `/${slug}?lat=${latitude}&lng=${longitude}`
 
   return (
     <Link

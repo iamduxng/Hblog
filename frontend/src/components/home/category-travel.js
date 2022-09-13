@@ -8,7 +8,7 @@ const styles = {
   item: 'flex-1 mx-2 md:mx-6 shadow-md rounded-2xl overflow-hidden',
 }
 
-const travelCategorySlug = 'travel'
+const travelCategorySlug = 'journey'
 
 const HomeCategoryTravel = () => {
   const { strapiHome } = useStaticQuery(graphql`
