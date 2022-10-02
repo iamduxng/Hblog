@@ -1,0 +1,11 @@
+{
+  "map_field": {
+    "label": "Check-in location",
+    "description": "Where was your article posted?",
+    "options": {
+      "advanced.requiredField": "Required field",
+      "advanced.requiredField.description": "You won't be able to create an entry if this field is empty",
+      "validator.required": "The check-in location is required"
+    }
+  }
+}

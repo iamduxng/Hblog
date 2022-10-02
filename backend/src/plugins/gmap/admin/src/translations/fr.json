@@ -1,0 +1,9 @@
+{
+  "map_field": {
+    "label": "Check-in location",
+    "description": "Where was your article posted?",
+    "options": {
+      "validator.required": "The check-in location is required"
+    }
+  }
+}

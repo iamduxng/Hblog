@@ -1,0 +1,25 @@
+{
+  "name": "@strapi/plugin-gmap",
+  "version": "0.0.0",
+  "description": "A custom plugin to register custom field (article's check-in location)",
+  "strapi": {
+    "name": "gmap",
+    "description": "A custom plugin to register custom field (article's check-in location)",
+    "kind": "plugin",
+    "displayName": "Gmap"
+  },
+  "dependencies": {},
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "maintainers": [
+    {
+      "name": "A Strapi developer"
+    }
+  ],
+  "engines": {
+    "node": ">=14.19.1 <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}
