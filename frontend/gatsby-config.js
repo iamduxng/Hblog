@@ -56,11 +56,36 @@ module.exports = {
               },
             },
           },
+          {
+            singularName: 'home',
+            queryParams: {
+              populate: {
+                about: '*',
+                avatar: '*',
+                background: '*',
+                blocks: {
+                  populate: '*'
+                },
+                travelOverview: {
+                  populate: '*'
+                },
+              }
+            }
+          }
         ],
       },
     },
     'gatsby-plugin-image',
-    'gatsby-plugin-sharp',
+    'gatsby-background-image',
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          placeholder: 'none',
+          backgroundColor: 'transparent',
+        }
+      }
+    },
     'gatsby-transformer-sharp',
     'gatsby-transformer-remark',
     {
@@ -70,19 +95,14 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-breadcrumb`,
+      resolve: 'gatsby-plugin-breakpoints',
       options: {
-        defaultCrumb: {
-          // location: required and must include the pathname property
-          location: {
-            pathname: '/',
-          },
-          // crumbLabel: required label for the default crumb
-          crumbLabel: 'Home',
-          // all other properties optional
-          crumbSeparator: ' / ',
-        },
-      },
-    },
+        queries: {
+          sm: '(min-width: 640px)',
+          md: '(min-width: 768px)',
+          l: '(min-width: 1024px)',
+        }
+      }
+    }
   ],
 }

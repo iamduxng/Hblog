@@ -2,10 +2,9 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import LayoutPost from 'components/layout/post'
 import Seo from 'components/seo'
-import BlocksRenderer from 'components/blocks-renderer'
-import Headings from 'components/core/headings'
+import BlocksRenderer from 'components/core/blocks-renderer'
 
-const AboutPage = () => {
+const AboutPage = ({ location }) => {
   const { strapiAbout } = useStaticQuery(graphql`
     query {
       strapiAbout {
@@ -24,10 +23,12 @@ const AboutPage = () => {
   }
 
   return (
-    <LayoutPost>
+    <LayoutPost location={location}>
       <Seo seo={seo} />
-      <Headings title={strapiAbout.title} />
-      <BlocksRenderer blocks={blocks} />
+
+      <div className="h-container">
+        <BlocksRenderer blocks={blocks} />
+      </div>
     </LayoutPost>
   )
 }

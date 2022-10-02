@@ -1,0 +1,51 @@
+{
+  "kind": "singleType",
+  "collectionName": "homes",
+  "info": {
+    "singularName": "home",
+    "pluralName": "homes",
+    "displayName": "Home",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "background": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "about": {
+      "type": "text",
+      "required": true,
+      "unique": true,
+      "maxLength": 200
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.social-media"
+      ]
+    },
+    "travelOverview": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.travel-overview"
+      ],
+      "required": false
+    }
+  }
+}

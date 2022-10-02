@@ -1,17 +1,18 @@
 import React from 'react'
 import Footer from 'components/core/footer'
-import Navbar from 'components/core/navbar'
+import Header from 'components/core/header'
 
 const styles = {
-  wrapper: 'flex min-h-screen flex-col justify-between bg-neutral-50 text-neutral-900'
+  main: 'h-container',
+  wrapper: 'flex min-h-screen flex-col justify-between text-neutral-900'
 }
 
-const LayoutPost = ({ children }) => {
+const LayoutPost = ({ children, location }) => {
   return (
     <div className={styles.wrapper}>
       <div>
-        <Navbar />
-        <main className="container mt-12">
+        <Header location={location} />
+        <main className={styles.main}>
           {children}
         </main>
       </div>

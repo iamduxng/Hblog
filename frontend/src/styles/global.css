@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply bg-paper bg-opacity-80;
+}
+
+.h-container {
+  @apply container mt-20;
+}

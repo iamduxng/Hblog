@@ -1,30 +1,20 @@
 import React from 'react'
 import Footer from 'components/core/footer'
-import Navbar from 'components/core/navbar'
-import CustomBreadcrumb from 'components/core/breadcrumb'
-import InputSearch from 'components/common/input-search'
+import Header from 'components/core/header'
 
 const styles = {
-  wrapper: 'flex min-h-screen flex-col justify-between bg-neutral-50 text-neutral-900',
-  mainHeading: 'flex flex-col mb-16 md:flex-row md:items-center md:justify-between',
+  main: 'mb-40 overflow-hidden',
+  wrapper: 'flex min-h-screen flex-col justify-between text-neutral-900',
   breadcrumb: 'mb-4 md:mb-0',
-  searchBar: 'w-full md:max-w-md',
+  searchBar: 'w-full md:max-w-md md:ml-auto',
 }
 
-const Layout = ({ children, location, crumbLabel, searchFunc }) => {
+const Layout = ({ children, location }) => {
   return (
     <div className={styles.wrapper}>
       <div>
-        <Navbar />
-        <main className="container mt-12">
-          <div className={styles.mainHeading}>
-            <div className={styles.breadcrumb}>
-              <CustomBreadcrumb location={location} crumbLabel={crumbLabel} />
-            </div>
-            <div className={styles.searchBar}>
-              <InputSearch searchFunc={searchFunc} placeholder="Search..." />
-            </div>
-          </div>
+        <Header location={location} />
+        <main className={styles.main}>
           {children}
         </main>
       </div>

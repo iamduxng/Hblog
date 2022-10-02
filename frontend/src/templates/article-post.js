@@ -2,10 +2,10 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import LayoutPost from 'components/layout/post'
-import BlocksRenderer from 'components/blocks-renderer'
+import BlocksRenderer from 'components/core/blocks-renderer'
 import Seo from 'components/seo'
 
-const ArticlePage = ({ data }) => {
+const ArticlePage = ({ data, location }) => {
   const article = data.strapiArticle
 
   const seo = {
@@ -15,7 +15,7 @@ const ArticlePage = ({ data }) => {
   }
 
   return (
-    <LayoutPost>
+    <LayoutPost location={location}>
       <Seo seo={seo} />
       <header className="flex flex-col items-center">
         <h1 className="text-6xl font-bold text-neutral-700">{article.title}</h1>
